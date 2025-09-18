@@ -16,12 +16,15 @@ const reactiveItems = reactiveRoutes[0].children ?? [];
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuComponent {
+
+
   reactiveMenu: MenuItem[] = reactiveItems
     .filter((item) => item.path !== '**')
     .map((item) => ({
       route: `reactive/${item.path}`,
       title: `${item.title}`,
     }));
+
 
   authMenu: MenuItem[] = [
     {
@@ -30,10 +33,14 @@ export class SideMenuComponent {
     },
   ];
 
+
+
   countryMenu: MenuItem[] = [
     {
       title: 'Paises',
       route: './country',
     },
   ];
+
+  
 }
